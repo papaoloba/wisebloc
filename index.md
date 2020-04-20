@@ -19,8 +19,10 @@
 	- images
 	- fonts
 - lib
+	- repository.dart
+	- main.dart
 	- bloc
-	- app_bloc.dart
+		- app_bloc.dart
 		- app_event.dart
 		- app_state.dart
 		- app_state_handler.dart
@@ -37,8 +39,6 @@
 				- screen_name_state.dart
 				- screenNameHandler.dart
 			- ...
-	- repository.dart
-	- main.dart
 - test
 - web
 - .gitignore
