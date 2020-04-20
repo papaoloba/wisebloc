@@ -8,7 +8,7 @@
 ### VSCode extensions
 - _(optional)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
 
-### Flutter folder structure
+### Flutter project folder structure
 ```
 - .dart_tool
 - .idea
@@ -52,6 +52,10 @@
 - README.md
 - project_name.iml
 ```
+
+### main.dart
+
+
 
 ## Welcome to GitHub Pages
 
