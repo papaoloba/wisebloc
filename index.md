@@ -1,12 +1,31 @@
 ## Setup
 
 ### Libraries
-- Install [``bloc``](https://bloclibrary.dev/#/);
-- Install [``flutter_bloc``](https://pub.dev/packages/flutter_bloc);
-- Install [``equatable``](https://pub.dev/packages/equatable).
+- Install [`bloc`](https://bloclibrary.dev/#/);
+- Install [`flutter_bloc`](https://pub.dev/packages/flutter_bloc);
+- Install [`equatable`](https://pub.dev/packages/equatable).
 
 ### VSCode extensions
-- (optional) Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
+- _(optional)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
+
+### Flutter folder structure
+```
+- .dart_tool
+- .idea
+- android
+- iod
+- lib
+- test
+- web
+- .gitignore
+- .metadata
+- .packages
+- pubspeck.lock
+- pubspeck.yaml
+- README.md
+- project_counter.iml
+
+```
 
 ## Welcome to GitHub Pages
 
