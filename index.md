@@ -15,30 +15,30 @@
 - android
 - ios
 - assets
-  - icons
-  - images
-  - fonts
+	- icons
+	- images
+	- fonts
 - lib
-  - bloc
-  	- app_bloc.dart
-  	- app_event.dart
-  	- app_state.dart
-  	- app_state_handler.dart
+	- bloc
+	- app_bloc.dart
+		- app_event.dart
+		- app_state.dart
+		- app_state_handler.dart
 	- custom_widgets
 	- data_objects
 	- utils
 		- helper_functions.dart
 	- views
-  	- ScreenName
-    	- ScreenName.dart
-    	- bloc
-      	- screen_name_bloc.dart
-        - screen_name_event.dart
-        - screen_name_state.dart
-        - screenNameHandler.dart
-     - ...
-  - repository.dart
-  - main.dart
+		- ScreenName
+			- ScreenName.dart
+			- bloc
+				- screen_name_bloc.dart
+				- screen_name_event.dart
+				- screen_name_state.dart
+				- screenNameHandler.dart
+			- ...
+	- repository.dart
+	- main.dart
 - test
 - web
 - .gitignore
