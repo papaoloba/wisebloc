@@ -8,6 +8,14 @@
 ### VSCode extensions
 - _(optional)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
 
+### Main logic
+
+#### Navigation
+The `ÀppBloc` is responsible for the navigation between screens. It is made globally accessible by injecting it into the root widget through a `BlocProvider` instance defined inside the `runApp` method. The actual routing process is conducted in the build method of the `App` widget by returning a `BlocBuilder` of the `AppBloc` in which the state of the `AppState` is branched each time a `NavigateTo` event is called in the UI. Each branch corresponds to a specific screen. If `AppState` matches `NavigationToScreenName`, then the `BlocBuilder` returns the rendering widget `ScreenName`, which takes as unique input the `appStateHandler` instance of the `AppStateHandler` class created at the beginning of the `main` method.
+
+#### State management
+The `AppHandler` class stores all the information about the current state of the whole app and of each of its screens. It is made globally accessible by creating an instance `appHandler` inside the `main` method and by passing it as an input to each screen widget returned by the `build` method of the `App` widget and to each `Bloc` object provided to the widget tree through the `MultiBlocProvider` (which wraps the root widget inside the `main` method).
+
 ### Flutter project folder structure
 ```
 - .dart_tool
@@ -54,6 +62,66 @@
 ```
 
 ### main.dart
+
+```dart
+
+import 'package:flutter/material.dart';
+import 'package:wisebloc_counter/bloc/app_bloc.dart';
+import 'package:wisebloc_counter/bloc/app_handler.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project_name/views/HomePage/HomePage.dart';
+import 'package:project_name/views/HomePage/ScreenName.dart';
+
+void main() {
+
+  final appHandler = AppHandler();
+
+  runApp(
+    BlocProvider(
+    create: (context) => AppBloc(),
+    child: App(appHandler: AppHandler())),
+  );
+
+}
+
+class App extends StatelessWidget {
+
+  final AppHandler appHandler;
+
+  App({Key key, @required this.appHandler}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+      
+      title: 'App',
+
+      home: BlocBuilder<AppBloc, AppState>(
+            builder: (context, state) {
+
+              if (state is AppInitial) {
+                return HomePage();
+              }
+
+              else if (state is HomePage) {
+                return HomePage();
+              }
+	      
+	      else if (state is ScreenName) {
+                return ScreenName();
+              }
+
+            } 
+      )
+
+    );
+  }
+
+}
+
+
+```
 
 
 
