@@ -14,31 +14,34 @@
 - .idea
 - android
 - ios
+
 - assets
-	- icons
-	- images
-	- fonts
+  - icons
+  - images
+  - fonts
+	
 - lib
-	- repository.dart
-	- main.dart
-	- bloc
-		- app_bloc.dart
-		- app_event.dart
-		- app_state.dart
-		- app_handler.dart
-	- custom_widgets
-	- data_objects
-	- utils
-		- helper_functions.dart
-	- views
-		- ScreenName
-			- ScreenName.dart
-			- bloc
-				- screen_name_bloc.dart
-				- screen_name_event.dart
-				- screen_name_state.dart
-				- screen_name_handler.dart
-			- ...
+  - repository.dart
+  - main.dart
+  - bloc
+    - app_bloc.dart
+    - app_event.dart
+    - app_state.dart
+    - app_handler.dart
+  - custom_widgets
+  - data_objects
+  - utils
+    - helper_functions.dart
+  - views
+    - ScreenName
+      - ScreenName.dart
+      - bloc
+        - screen_name_bloc.dart
+        - screen_name_event.dart
+        - screen_name_state.dart
+        - screen_name_handler.dart
+      - ...
+			
 - test
 - web
 - .gitignore
