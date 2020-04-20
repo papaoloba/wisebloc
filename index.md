@@ -1,7 +1,7 @@
 ## Setup
 
 ### Libraries
-Install ``bloc``, ``flutter_bloc`` and ``equatable``.
+Install [``bloc``](https://bloclibrary.dev/#/), [``flutter_bloc``](https://pub.dev/packages/flutter_bloc) and [``equatable``](https://pub.dev/packages/equatable).
 
 ## Welcome to GitHub Pages
 
