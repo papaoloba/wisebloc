@@ -1,6 +1,6 @@
-## Setup
+# Setup
 
-# Libraries
+## Libraries
 Install bloc, flutter_bloc and equatable.
 
 ## Welcome to GitHub Pages
