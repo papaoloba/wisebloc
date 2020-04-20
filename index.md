@@ -1,7 +1,12 @@
 ## Setup
 
 ### Libraries
-Install [``bloc``](https://bloclibrary.dev/#/), [``flutter_bloc``](https://pub.dev/packages/flutter_bloc) and [``equatable``](https://pub.dev/packages/equatable).
+- Install [``bloc``](https://bloclibrary.dev/#/);
+- Install [``flutter_bloc``](https://pub.dev/packages/flutter_bloc);
+- Install [``equatable``](https://pub.dev/packages/equatable).
+
+### VSCode extensions
+- (optional) Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
 
 ## Welcome to GitHub Pages
 
