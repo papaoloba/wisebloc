@@ -1,8 +1,7 @@
-# prova
 ## Setup
 
 ### Libraries
-Install bloc, flutter_bloc and equatable.
+Install ``bloc``, ``flutter_bloc`` and ``equatable``.
 
 ## Welcome to GitHub Pages
 
