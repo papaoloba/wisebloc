@@ -25,7 +25,7 @@
 		- app_bloc.dart
 		- app_event.dart
 		- app_state.dart
-		- app_state_handler.dart
+		- app_handler.dart
 	- custom_widgets
 	- data_objects
 	- utils
@@ -37,7 +37,7 @@
 				- screen_name_bloc.dart
 				- screen_name_event.dart
 				- screen_name_state.dart
-				- screenNameHandler.dart
+				- screen_name_handler.dart
 			- ...
 - test
 - web
