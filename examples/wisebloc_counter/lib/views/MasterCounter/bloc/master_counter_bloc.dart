@@ -28,6 +28,7 @@ class MasterCounterBloc extends Bloc<MasterCounterEvent, MasterCounterState> {
     if (event is InitializeMasterCounter) {
 
       appHandler.masterCounter.counter = 0;
+      appHandler.slaveCounter.counter = 0;
       await Future.delayed(Duration(seconds: 2));
       yieldState(appHandler.masterCounter, MasterCounterPlainCounter);
 
