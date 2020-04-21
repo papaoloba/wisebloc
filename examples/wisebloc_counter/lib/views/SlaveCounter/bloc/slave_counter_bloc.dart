@@ -27,7 +27,6 @@ class SlaveCounterBloc extends Bloc<SlaveCounterEvent, SlaveCounterState> {
 
     if (event is InitializeSlaveCounter) {
 
-      appHandler.slaveCounter.counter = 0;
       await Future.delayed(Duration(seconds: 2));
       yieldState(appHandler.slaveCounter, SlaveCounterPlainCounter);
 
@@ -43,4 +42,3 @@ class SlaveCounterBloc extends Bloc<SlaveCounterEvent, SlaveCounterState> {
 
   }
 }
-
