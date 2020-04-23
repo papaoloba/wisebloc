@@ -14,7 +14,7 @@
 The `ÀppBloc` is responsible for the navigation between screens. It is made globally accessible by injecting it into the root widget through a `BlocProvider` instance defined inside the `runApp` method. The actual routing process is conducted in the build method of the `App` widget by returning a `BlocBuilder` of the `AppBloc` in which the state of the `AppState` is branched each time a `NavigateTo` event is called in the UI. Each branch corresponds to a specific screen. If `AppState` matches `NavigationToScreenName`, then the `BlocBuilder` returns the rendering widget `ScreenName`, which takes as unique input the `appStateHandler` instance of the `AppStateHandler` class created at the beginning of the `main` method.
 
 #### State management
-The `AppHandler` class stores all the information about the current state of the whole app and of each of its screens. It is made globally accessible by creating an instance `appHandler` inside the `main` method and by passing it as an input to each screen widget returned by the `build` method of the `App` widget and to each `Bloc` object provided to the widget tree through the `MultiBlocProvider` (which wraps the root widget inside the `main` method).
+The `AppHandler` class stores all the information about the global state of the app and of each of its screens. It is made globally accessible by creating an instance `appHandler` inside the `main` method and by passing it as an input to each screen widget returned by the `build` method of the `App` widget and to each `Bloc` object provided to the widget tree through the `MultiBlocProvider` (which wraps the root widget inside the `main` method).
 
 ### Flutter project folder structure
 ```
