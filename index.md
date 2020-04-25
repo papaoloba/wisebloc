@@ -12,21 +12,20 @@
 The wisebloc architecture is a special implementation of the BLoC pattern ensuring a higher state management flexibility. The main features are:
 
 - There exists an `AppBloc` responsible for the navigation between screens;
-- Each screen has its own BLoC;
-- Each screen BLoC can only yield the following pre-defined states: the `ScreenNameInitial` state, the `ScreenNameLoading` state and the `ScreenNameInitialized` state;
-- All the information necessary to render a screen's state is contained inside an instance `screenName` of the `ScreenHandler` class object;
-- All the `screenName` objects are attributes of the `AppHandler` class, which is instantiated as an `appHandler` variable inside the `main` method and eventually made available to each screen and BLoC of the app;
-- The `state` attribute of any `screenName` instance, which holds the current state of the screen `ScreenName`, can be modified from any BLoC by calling the method `yieldState(appHandler.screenName,ScreenNameState)`, where `ScreenNameState` is the new screen state.
+- Each screen has its own `ScreenNameBloc`;
+- Each `ScreenNameBloc` can only yield the following pre-defined states: the `ScreenNameInitial` state, the `ScreenNameLoading` state and the `ScreenNameInitialized` state;
+- Any other custom state is rendered as particular realization of the `ScreenNameInitialized` state, which is always the last state yielded by the `mapEventToState` method of each `ScreenNameBloc`; 
+- The `ScreenNameLoading` is yielded every time the `mapEventToState` is entered in the `ScreenNameBloc` (that is, after every BLoC event or just after the inizialization of the screen);
+- The `ScreenNameInitial` state is only yielded the very first time the screen is rendered in a user session. The `InitializeScreenName` event is called immediately after, and the `mapEventToState` method of the `ScreenNameBloc` is entered for the first time in the screen's lifecycle;
+- All the information necessary to render a screen's custom state is contained inside an instance `screenName` of the `ScreenHandler` class object. This information can be accessed and modified from anywhere in the app, as explained in the following point;
+- All the `screenName` objects are attributes of the `AppHandler` class, which is always instantiated at the beginning of the `main` method and eventually made available as an `appHandler` object to each screen and BLoC of the app;
+- The `state` attributes of all the `screenName` instances, which hold all the current custom states of the screens, can be modified from anywhere in the app by calling the method `yieldState(appHandler.screenName,ScreenNameState)`, where `ScreenNameState` is the new custom state being assigned to the screen `ScreenName`;
+- A `Repository` class, containing all the static methods responsible of calling the app's APIs, is imported in each `ScreenNameBloc`.
 
 
 
 
 
-
-
-
-- Each BLoC can only yield the following pre-defined states: the `Initial` state, the `Loading` state and the `Initialized` state;
-- The `Initial` state is only yielded the very first time the screen is rendered in a user session. The `Initialize` event is called immediately after, and the `mapEventToState` method of the screen BLoC is entered for the first time in the screen lifecycle;
 
 #### Navigation
 The `ÀppBloc` is responsible for the navigation between pages. It is made globally accessible by injecting it into the root widget through a `BlocProvider` instance defined inside the `runApp` method. The actual routing process is conducted in the build method of the `App` widget by returning a `BlocBuilder` of the `AppBloc` in which the `AppState` is branched each time a `NavigateTo` event is called in the UI. Each branch corresponds to a specific screen. If `AppState` matches `NavigationToScreenName`, then the `BlocBuilder` returns the rendering widget `ScreenName`, taking as unique input the `appHandler` instance of the `AppHandler` class created at the beginning of the `main` method.
