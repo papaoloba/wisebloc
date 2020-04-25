@@ -19,7 +19,7 @@ The wisebloc architecture is a special implementation of the BLoC pattern ensuri
 - The `ScreenNameInitial` state is only yielded the very first time the screen is rendered in a user session. The `InitializeScreenName` event is called immediately after, and the `mapEventToState` method of the `ScreenNameBloc` is entered for the first time in the screen's lifecycle;
 - All the information necessary to render a screen's custom state is contained inside a `screenName` instance of the `ScreenHandler` class object. This information can be accessed and modified from anywhere in the app, as explained in the following point;
 - All the `screenName` objects are attributes of the `AppHandler` class, which is always instantiated at the beginning of the `main` method and eventually made available as an `appHandler` object to each screen and BLoC of the app;
-- The `state` attributes of all the `screenName` instances, which hold all the current custom states of the screens, can be modified from anywhere in the app by calling the method `yieldState(appHandler.screenName,ScreenNameState)`, where `ScreenNameState` is the new custom state being assigned to the screen `ScreenName`;
+- The `state` attributes of all the `screenName` instances, which hold all the current custom states of the screens, can be modified from anywhere in the app by calling the method `yieldState(appHandler.screenName,ScreenNameState)`, where `ScreenNameState` is the new custom state being assigned to `ScreenName`;
 - A `Repository` class, containing all the static methods responsible of calling the app's APIs, is imported in each `ScreenNameBloc`.
 
 
