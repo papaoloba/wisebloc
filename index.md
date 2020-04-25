@@ -11,12 +11,12 @@
 ### Main logic
 The wisebloc architecture is a special implementation of the BLoC pattern ensuring a higher state management flexibility. The main features are:
 
-- There exists an "App BLoC" responsible for the navigation between screens;
+- There exists an `AppBloc` responsible for the navigation between screens;
 - Each screen has its own BLoC;
 - Each screen BLoC can only yield the following pre-defined states: the `ScreenNameInitial` state, the `ScreenNameLoading` state and the `ScreenNameInitialized` state;
 - All the information necessary to render a screen's state is contained inside an instance `screenName` of the `ScreenHandler` class object;
-- All the `screenName` objects are attributes of the `AppHandler` class, which is instantiated as an `appHandler` object inside the `main` method and made available to each screen and BLoC of the app;
-- The `state` attribute of the `screenName` instance, which holds the current state of the screen `ScreenName`, can be modified from any screen BLoC by calling the method `yieldState` 
+- All the `screenName` objects are attributes of the `AppHandler` class, which is instantiated as an `appHandler` variable inside the `main` method and eventually made available to each screen and BLoC of the app;
+- The `state` attribute of any `screenName` instance, which holds the current state of the screen `ScreenName`, can be modified from any BLoC by calling the method `yieldState(appHandler.screenName,ScreenNameState)`, where `ScreenNameState` is the new screen state.
 
 
 
