@@ -6,7 +6,7 @@
 - Install [`equatable`](https://pub.dev/packages/equatable).
 
 ### VSCode extensions
-- _(optional)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
+- _(recommended)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
 
 ### Main logic
 The wisebloc architecture is a special implementation of the BLoC pattern ensuring a higher state management flexibility. The main features are:
