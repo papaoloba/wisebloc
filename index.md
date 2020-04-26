@@ -1,5 +1,5 @@
 ## Purpose
-The wisebloc architecture is a special implementation of the BLoC pattern ensuring a higher state management flexibility. This is done by making the state of each screen of the app easily accessible and modifiable from any Business Logic Component (BLoC) of the app. 
+The wisebloc architecture is a special implementation of the BLoC pattern ensuring a higher state management flexibility. This is done by making the state of each screen of the app easily accessible and modifiable from any Business Logic Component (BLoC) of the app and by delegating the navigation processes to a dedicated `AppBloc`.
 
 
 ### Main logic
