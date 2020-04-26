@@ -1,14 +1,4 @@
-## Setup
-
-### Libraries
-- Install [`bloc`](https://bloclibrary.dev/#/);
-- Install [`flutter_bloc`](https://pub.dev/packages/flutter_bloc);
-- Install [`equatable`](https://pub.dev/packages/equatable).
-
-### VSCode extensions
-- _(recommended)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
-
-### Purpose
+## Purpose
 The wisebloc architecture is a special implementation of the BLoC pattern ensuring a higher state management flexibility. This is done by making the state of each screen of the app easily accessible and modifiable from any Business Logic Component (BLoC) of the app. 
 
 
@@ -31,6 +21,16 @@ The `ÀppBloc` is responsible for the navigation between pages. It is made globa
 
 #### State management
 The `AppHandler` class stores all the information about the global state of the app and of each of its screens. It is made globally accessible by creating an instance `appHandler` inside the `main` method and by passing it as an input to each screen widget returned by the `build` method of the `App` widget and to each `Bloc` object provided to the widget tree through the `MultiBlocProvider` wrapping the root widget inside the `main` method.
+
+## Setup
+
+### Libraries
+- Install [`bloc`](https://bloclibrary.dev/#/);
+- Install [`flutter_bloc`](https://pub.dev/packages/flutter_bloc);
+- Install [`equatable`](https://pub.dev/packages/equatable).
+
+### VSCode extensions
+- _(recommended)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
 
 ### Flutter project folder structure
 ```
