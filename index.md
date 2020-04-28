@@ -3,7 +3,7 @@ The wisebloc architecture is a special implementation of the BLoC pattern ensuri
 
 
 ### Main logic
-The main logic of the wisebloc architecture can be explained through the following features:
+The main logic of the wisebloc architecture lies in the following features:
 
 - Each `ScreenName` has its own `ScreenNameBloc`, which only responds to UI events coming from its associated screen;
 - A globally accessible `AppBloc` is responsible for the navigation between screens;
