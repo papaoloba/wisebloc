@@ -8,7 +8,7 @@ The main logic of the wisebloc architecture lies in the following features:
 - Each `ScreenName` has its own `ScreenNameBloc`, which only responds to UI events coming from its associated screen;
 - A globally accessible `AppBloc` is responsible for the navigation between screens;
 - Each `ScreenNameBloc` can only yield the following pre-defined states: `ScreenNameInitial`, `ScreenNameLoading` and `ScreenNameInitialized`;
-- Any other custom state is rendered as  particular realization of the `ScreenNameInitialized` state, which is always the last state yielded by the `mapEventToState` method of each `ScreenNameBloc`; 
+- Any other custom state is rendered as  particular realization of the `ScreenNameInitialized` state, which is always the last state yielded by the `mapEventToState` method inside the `ScreenNameBloc`; 
 - The `ScreenNameLoading` is yielded every time the `mapEventToState` is entered in the `ScreenNameBloc` (that is, after every BLoC event or just after the inizialization of the screen);
 - The `ScreenNameInitial` state is only yielded the very first time the screen is rendered in a user session. The `InitializeScreenName` event is called immediately after, and the `mapEventToState` method of the `ScreenNameBloc` is entered for the first time in the screen's lifecycle;
 - All the information necessary to render a screen's custom state is contained inside a `screenName` instance of the `ScreenHandler` class object. This information can be accessed and modified from anywhere in the app, as explained in the following point;
