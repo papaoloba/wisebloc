@@ -27,7 +27,8 @@ The `AppHandler` class stores all the information about the global state of the 
 ### Libraries
 - Install [`bloc`](https://bloclibrary.dev/#/);
 - Install [`flutter_bloc`](https://pub.dev/packages/flutter_bloc);
-- Install [`equatable`](https://pub.dev/packages/equatable).
+- Install [`equatable`](https://pub.dev/packages/equatable);
+- Install [`after_layout`](https://pub.dev/packages/after_layout)
 
 ### VSCode extensions
 - _(recommended)_ Install [the bloc extension](https://github.com/felangel/bloc/tree/master/extensions/vscode) by Felix Angelov.
