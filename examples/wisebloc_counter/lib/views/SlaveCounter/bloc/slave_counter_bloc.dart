@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:wisebloc_counter/wisebloc_utils.dart';
 import 'package:wisebloc_counter/bloc/app_handler.dart';
-import 'package:wisebloc_counter/utils/helper_functions.dart';
 
 part 'slave_counter_event.dart';
 part 'slave_counter_state.dart';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wisebloc_counter/bloc/app_bloc.dart';
 import 'package:wisebloc_counter/bloc/app_handler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wisebloc_counter/wisebloc_utils.dart';
 import 'package:wisebloc_counter/views/MasterCounter/bloc/master_counter_bloc.dart';
 import 'package:wisebloc_counter/views/SlaveCounter/SlaveCounter.dart';
 import 'package:wisebloc_counter/views/MasterCounter/MasterCounter.dart';
@@ -52,7 +53,7 @@ class App extends StatelessWidget {
             builder: (context, state) {
 
               if (state is AppInitial) {
-                return MasterCounter(appHandler: appHandler);
+                return SplashScreenCaller();    
               }
 
               else if (state is MasterCounterNavigation) {
@@ -61,7 +62,7 @@ class App extends StatelessWidget {
 
               else if (state is SlaveCounterNavigation) {
                 return SlaveCounter(appHandler: appHandler);
-              }              
+              }     
 
             } 
 

@@ -13,3 +13,9 @@ class NavigateTo extends AppEvent {
     List<Object> get props => [destination];
 
 }
+
+class InitializeApp extends AppEvent {
+
+    List<Object> get props => [];
+
+}

@@ -24,8 +24,17 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   Stream<AppState> mapEventToState(
     AppEvent event,
   ) async* {
+
+    if (event is InitializeApp) {
+
+      appHandler.masterCounter.counter = 0; // Initialize master counter to 0
+      appHandler.slaveCounter.counter = 0;  // Initialize master counter to 0
+
+      yield MasterCounterNavigation();      // Navigate to the homepage of the app after initialization
+
+    }
     
-    if (event is NavigateTo) {
+    else if (event is NavigateTo) {
 
       if (event.destination is MasterCounter) {
         yield MasterCounterNavigation();
