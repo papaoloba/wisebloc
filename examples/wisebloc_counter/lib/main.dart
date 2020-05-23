@@ -15,15 +15,9 @@ void main() {
 
   runApp(MultiBlocProvider(
     providers: [
-
-    BlocProvider(
-    create: (context) => AppBloc(appHandler)),
-
-    BlocProvider(
-    create: (context) => MasterCounterBloc(appHandler)),
-
-    BlocProvider(
-    create: (context) => SlaveCounterBloc(appHandler)),
+    BlocProvider(create: (context) => AppBloc(appHandler)),
+    BlocProvider(create: (context) => MasterCounterBloc(appHandler)),
+    BlocProvider(create: (context) => SlaveCounterBloc(appHandler)),
     ],
     child: App(appHandler),
     ),
@@ -54,13 +48,9 @@ class App extends StatelessWidget {
 
               if (state is AppInitial) {
                 return SplashScreenCaller();    
-              }
-
-              else if (state is MasterCounterNavigation) {
+              } else if (state is MasterCounterNavigation) {
                 return MasterCounter(appHandler: appHandler);
-              }
-
-              else if (state is SlaveCounterNavigation) {
+              } else if (state is SlaveCounterNavigation) {
                 return SlaveCounter(appHandler: appHandler);
               }     
 

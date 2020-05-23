@@ -33,12 +33,14 @@ class MasterCounterBloc extends Bloc<MasterCounterEvent, MasterCounterState> {
     }
 
     else if (event is IncrementButtonPressed) {
-
+      
+      await Future.delayed(Duration(seconds: 1));
       appHandler.masterCounter.counter++; // Increment the master counter
       appHandler.slaveCounter.counter++; // Increment the slave counter (in a different screen)
       
     }
 
+    appHandler.masterCounter.initialized = true;
     yield MasterCounterInitialized();
 
   }

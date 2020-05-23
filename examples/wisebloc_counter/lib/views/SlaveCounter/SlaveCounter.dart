@@ -21,20 +21,10 @@ class SlaveCounter extends StatelessWidget {
 
         if (state is SlaveCounterInitial) {
           return buildInitial(context);
-        }
-
-        else if (state is SlaveCounterLoading) {
-          return buildLoading();
-        }
-
-        else if (state is SlaveCounterInitialized) {
-
-          final state = appHandler.slaveCounter.state;
-          
-          if ( state == SlaveCounterPlainCounter ) {
-          return buildPlainCounter(context, appHandler);
-          }
-          
+        } else if (state is SlaveCounterLoading) {
+          return buildLoading(context,appHandler);
+        } else if (state is SlaveCounterInitialized) {
+          return buildInitialized(context,appHandler);
         }
 
       },
@@ -49,11 +39,32 @@ Widget buildInitial(context) {
 }
 
 
-Widget buildLoading() {
-  return StandardLoadingScreen();
+Widget buildLoading(BuildContext context, AppHandler appHandler) {
+
+  if (appHandler.slaveCounter.initialized) {
+    return Stack(
+      children: <Widget>[
+        buildInitialized(context, appHandler),
+        Center(child: CircularProgressIndicator())
+      ],
+    );
+  } else {
+    return StandardLoadingScreen();
+  }
+
 }
 
-Widget buildPlainCounter(context, appHandler) {
+Widget buildInitialized(BuildContext context, AppHandler appHandler) {
+
+  final state = appHandler.slaveCounter.state;
+  
+  if ( state == SlaveCounterPlainCounter ) {
+  return buildPlainCounter(context, appHandler);
+  }
+
+}
+
+Widget buildPlainCounter(BuildContext context, AppHandler appHandler) {
 
   return Scaffold(
       appBar: AppBar(

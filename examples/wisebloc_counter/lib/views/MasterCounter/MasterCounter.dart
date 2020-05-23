@@ -18,20 +18,10 @@ class MasterCounter extends StatelessWidget {
 
         if (state is MasterCounterInitial) {
           return buildInitial(context);
-        }
-
-        else if (state is MasterCounterLoading) {
-          return buildLoading();
-        }
-
-        else if (state is MasterCounterInitialized) {
-
-          final state = appHandler.masterCounter.state;
-          
-          if (state == MasterCounterPlainCounter) {
-          return buildPlainCounter(context, appHandler);
-          }
-          
+        } else if (state is MasterCounterLoading) {
+          return buildLoading(context,appHandler);
+        } else if (state is MasterCounterInitialized) {
+          return buildInitialized(context,appHandler);
         }
 
       },
@@ -46,11 +36,30 @@ Widget buildInitial(context) {
 }
 
 
-Widget buildLoading() {
-  return StandardLoadingScreen();
+Widget buildLoading(BuildContext context, AppHandler appHandler) {
+  if (appHandler.masterCounter.initialized) {
+    return Stack(
+      children: <Widget>[
+        buildInitialized(context, appHandler),
+        Center(child: CircularProgressIndicator())
+      ],
+    );
+  } else {
+    return StandardLoadingScreen();
+  }
 }
 
-Widget buildPlainCounter(context, appHandler) {
+Widget buildInitialized(BuildContext context, AppHandler appHandler) {
+
+  final state = appHandler.masterCounter.state;
+  
+  if (state == MasterCounterPlainCounter) {
+  return buildPlainCounter(context, appHandler);
+  }
+          
+}
+
+Widget buildPlainCounter(BuildContext context, AppHandler appHandler) {
 
   return Scaffold(
       appBar: AppBar(

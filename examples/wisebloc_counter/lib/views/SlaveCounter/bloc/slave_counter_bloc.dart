@@ -34,10 +34,12 @@ class SlaveCounterBloc extends Bloc<SlaveCounterEvent, SlaveCounterState> {
 
     else if (event is IncrementButtonPressed) {
 
+      await Future.delayed(Duration(seconds: 1));
       appHandler.slaveCounter.counter++;
       
     }
 
+    appHandler.slaveCounter.initialized = true;
     yield SlaveCounterInitialized();
 
   }
